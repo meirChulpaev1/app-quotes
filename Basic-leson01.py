@@ -2,10 +2,9 @@ import math
 # Python - Basic
 # condition
 def ax(a, b, c):
-    if a == 0 and b == 0 and c == 0:
+    if a == 0 and b == 0 :
         return
-    elif a == 0 and b == 0:
-        return
+    
     elif a == 0:
         x = -c/b
         return x
@@ -22,27 +21,38 @@ def ax(a, b, c):
       x2 = (-b - math.sqrt(delta)) / (2*a)             
       return x1, x2              
 
-def b(s,age):
- if age<18:
-    print("before army")
- else:
+def b(s, age):
+    
+    years = int(age)              
+    decimal = age - years         
+    months = int(decimal * 12)    
+
+    
+    total_months = years * 12 + months
+
+   
+    enlist_months = 18 * 12
+
+   
+    if total_months < enlist_months:
+        print("Before Army")
+        return
+
+   
+    women_release_months = 20 * 12        # 240
+    men_release_months   = 20 * 12 + 8    # 248
+
     if s == "woman":
-       if age<20:
-          print("Currently Serving")
-       else:
-          print("Released Citizen")
-    else:
-       if age>20:
-          age1=str(age)
-          if "."in age:
-              month=age1.split(".")[1]
-              month1= int(month)
-              if month1>=8:
-                 print("Released Citizen")
-              else:
-                 ("Currently Serving")
-       else:
-          print("Currently Serving")
+        if total_months >= women_release_months:
+            print("Released Citizen")
+        else:
+            print("Currently Serving")
+    else:  # גבר
+        if total_months >= men_release_months:
+            print("Released Citizen")
+        else:
+            print("Currently Serving")
+
 
 def previous_letter(a, b):
     a = a.lower()
@@ -68,8 +78,33 @@ def firstNumber(num):
             listFirstNum.append(i)
 print(firstNumber(20))
  
-def Olderguy(num=input):
-   for i in range (0,num+1):
-      name = input("What is your name? ")
-      age = input("What is your name? ")
+
+def Olderguy():
+    currAge = 0
+    oldest_names = []  
+
+    num = int(input("Enter N: "))
+
+    for i in range(num):
+        name = input("Enter name: ")
+        age = int(input("Enter age: "))
+
+        if age > currAge:
+            currAge = age
+            oldest_names = [name]   
+        elif age == currAge:
+            oldest_names.append(name)
+
+    
+    for person in oldest_names:
+        print(person, ":", currAge)
+   
       
+def longestName():
+ num = int(input("Enter N: "))
+ currn=""
+ for i in range (num):
+     name = input("What is your name? ")
+     if len(currn)>len(name):
+         currn=name
+ print(currn)         

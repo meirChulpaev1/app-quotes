@@ -15,10 +15,10 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path="/app-quotes/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/quote" element={<Quotes />} />
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<NotFound />} />
 
         </Routes>
       </BrowserRouter>

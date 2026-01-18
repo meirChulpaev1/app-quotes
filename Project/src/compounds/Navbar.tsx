@@ -11,7 +11,7 @@ function Navbar() {
     return (
         <>
             <nav className="navbar">
-                <NavLink to="/" style={({ isActive }: ComponentProps) => (isActive ? activeStyle : undefined)}>Home</NavLink> {' '}| {' '}
+                <NavLink to="/app-quotes/" style={({ isActive }: ComponentProps) => (isActive ? activeStyle : undefined)}>Home</NavLink> {' '}| {' '}
                 <NavLink to="/quote" style={({ isActive }:ComponentProps) => (isActive ? activeStyle : undefined)}>Quotes</NavLink> 
             </nav>
 

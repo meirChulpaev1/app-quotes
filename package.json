@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "react-router-dom": "^7.12.0"
+  },
+  "homepage": "https://meirChulpaev1.github.io/project-quotes",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
